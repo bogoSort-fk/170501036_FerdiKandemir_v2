@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace _170501036_FerdiKandemir_v2
 {
-    internal class Rechtsanwalt : Person
+    public class Rechtsanwalt : Person
     {
-        public Rechtsanwalt(string vorName, string nachName, string tcNummer, string telefonNummer) : base(vorName, nachName, tcNummer, telefonNummer)
+        public Rechtsanwalt(string vorName, string nachName, string tcNummer, string telefonNummer, int benutzerID) : base(vorName, nachName, tcNummer, telefonNummer, benutzerID)
         {
 
         }
-        public Rechtsanwalt(string vorName, string nachName, string tcNummer, string emailAdresse, string telefonNummer, string geschlecht, string teamNummer, int alter) : base(vorName, nachName, tcNummer, emailAdresse, telefonNummer, geschlecht, teamNummer, alter)
+        public Rechtsanwalt(string vorName, string nachName, string tcNummer, string emailAdresse, string telefonNummer, int benutzerID, string geschlecht, string teamNummer, int alter) : base(vorName, nachName, tcNummer, emailAdresse, telefonNummer, benutzerID, geschlecht, teamNummer, alter)
         {
 
         }
+
+     
 
 
     }

@@ -39,8 +39,6 @@ namespace _170501036_FerdiKandemir_v2
                 adminHomeButton.ForeColor = Color.White;
                 adminUserPanelButton.BackColor = Color.White;
                 adminUserPanelButton.ForeColor = Color.Black;
-                adminSystemSettingsButton.BackColor = Color.White;
-                adminSystemSettingsButton.ForeColor = Color.Black;
 
                 adminUserPanelSeite.Visible = false;
                 personTabelleBindingNavigator.Visible = false;
@@ -51,8 +49,6 @@ namespace _170501036_FerdiKandemir_v2
                 adminHomeButton.ForeColor = Color.Black;
                 adminUserPanelButton.BackColor = Color.Black;
                 adminUserPanelButton.ForeColor = Color.White;
-                adminSystemSettingsButton.BackColor = Color.White;
-                adminSystemSettingsButton.ForeColor = Color.Black;
 
                 adminUserPanelSeite.Visible = true;
                 personTabelleBindingNavigator.Visible = true;
@@ -63,8 +59,6 @@ namespace _170501036_FerdiKandemir_v2
                 adminHomeButton.ForeColor = Color.Black;
                 adminUserPanelButton.BackColor = Color.White;
                 adminUserPanelButton.ForeColor = Color.Black;
-                adminSystemSettingsButton.BackColor = Color.Black;
-                adminSystemSettingsButton.ForeColor = Color.White;
 
                 adminUserPanelSeite.Visible = false;
                 personTabelleBindingNavigator.Visible = false;
@@ -73,7 +67,6 @@ namespace _170501036_FerdiKandemir_v2
             {
                 adminHomeButton.BackColor = Color.White;
                 adminUserPanelButton.BackColor = Color.White;
-                adminSystemSettingsButton.BackColor = Color.White;
             }
         }
 
@@ -139,6 +132,11 @@ namespace _170501036_FerdiKandemir_v2
         }
 
         private void personTabelleBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

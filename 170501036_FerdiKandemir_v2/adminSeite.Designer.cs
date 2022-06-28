@@ -50,24 +50,22 @@
             this.personTabelleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rechtsbuero_DBDataSet = new _170501036_FerdiKandemir_v2.Rechtsbuero_DBDataSet();
             this.sideMenu = new System.Windows.Forms.Panel();
-            this.adminSystemSettingsButton = new System.Windows.Forms.Button();
             this.adminExitButton = new System.Windows.Forms.Button();
             this.adminUserPanelButton = new System.Windows.Forms.Button();
             this.adminHomeButton = new System.Windows.Forms.Button();
             this.personTabelleTableAdapter = new _170501036_FerdiKandemir_v2.Rechtsbuero_DBDataSetTableAdapters.PersonTabelleTableAdapter();
             this.tableAdapterManager = new _170501036_FerdiKandemir_v2.Rechtsbuero_DBDataSetTableAdapters.TableAdapterManager();
-            this.personTabelleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.personTabelleBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -79,6 +77,7 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.personTabelleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.loginPage.SuspendLayout();
             this.adminUserPanelSeite.SuspendLayout();
@@ -131,6 +130,8 @@
             // userDataTable
             // 
             this.userDataTable.AutoGenerateColumns = false;
+            this.userDataTable.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.userDataTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.userDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.benutzerIDDataGridViewTextBoxColumn,
@@ -146,10 +147,12 @@
             this.teamNummerDataGridViewTextBoxColumn,
             this.alterDataGridViewTextBoxColumn});
             this.userDataTable.DataSource = this.personTabelleBindingSource;
+            this.userDataTable.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.userDataTable.Location = new System.Drawing.Point(0, 0);
             this.userDataTable.Name = "userDataTable";
             this.userDataTable.Size = new System.Drawing.Size(534, 319);
             this.userDataTable.TabIndex = 1;
+            this.userDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDataTable_CellContentClick);
             // 
             // benutzerIDDataGridViewTextBoxColumn
             // 
@@ -236,7 +239,6 @@
             // sideMenu
             // 
             this.sideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
-            this.sideMenu.Controls.Add(this.adminSystemSettingsButton);
             this.sideMenu.Controls.Add(this.adminExitButton);
             this.sideMenu.Controls.Add(this.adminUserPanelButton);
             this.sideMenu.Controls.Add(this.adminHomeButton);
@@ -244,21 +246,6 @@
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(200, 333);
             this.sideMenu.TabIndex = 0;
-            // 
-            // adminSystemSettingsButton
-            // 
-            this.adminSystemSettingsButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.adminSystemSettingsButton.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminSystemSettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("adminSystemSettingsButton.Image")));
-            this.adminSystemSettingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adminSystemSettingsButton.Location = new System.Drawing.Point(3, 123);
-            this.adminSystemSettingsButton.Name = "adminSystemSettingsButton";
-            this.adminSystemSettingsButton.Size = new System.Drawing.Size(192, 44);
-            this.adminSystemSettingsButton.TabIndex = 1;
-            this.adminSystemSettingsButton.Text = "    Einstellungen";
-            this.adminSystemSettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adminSystemSettingsButton.UseVisualStyleBackColor = false;
-            this.adminSystemSettingsButton.Click += new System.EventHandler(this.adminSystemSettingsButton_Click);
             // 
             // adminExitButton
             // 
@@ -313,76 +300,6 @@
             this.tableAdapterManager.PersonTabelleTableAdapter = this.personTabelleTableAdapter;
             this.tableAdapterManager.UpdateOrder = _170501036_FerdiKandemir_v2.Rechtsbuero_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // personTabelleBindingNavigator
-            // 
-            this.personTabelleBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.personTabelleBindingNavigator.BindingSource = this.personTabelleBindingSource;
-            this.personTabelleBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.personTabelleBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.personTabelleBindingNavigator.Dock = System.Windows.Forms.DockStyle.Right;
-            this.personTabelleBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.personTabelleBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.personTabelleBindingNavigatorSaveItem,
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.printToolStripButton,
-            this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.helpToolStripButton});
-            this.personTabelleBindingNavigator.Location = new System.Drawing.Point(748, 0);
-            this.personTabelleBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.personTabelleBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.personTabelleBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.personTabelleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.personTabelleBindingNavigator.Name = "personTabelleBindingNavigator";
-            this.personTabelleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.personTabelleBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.personTabelleBindingNavigator.Size = new System.Drawing.Size(53, 474);
-            this.personTabelleBindingNavigator.TabIndex = 3;
-            this.personTabelleBindingNavigator.Text = "bindingNavigator1";
-            this.personTabelleBindingNavigator.RefreshItems += new System.EventHandler(this.personTabelleBindingNavigator_RefreshItems);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(50, 20);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(50, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(50, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -416,6 +333,13 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(50, 15);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
@@ -443,6 +367,25 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(50, 6);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(50, 20);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(50, 20);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // personTabelleBindingNavigatorSaveItem
             // 
@@ -535,11 +478,55 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(50, 20);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // personTabelleBindingNavigator
+            // 
+            this.personTabelleBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.personTabelleBindingNavigator.BindingSource = this.personTabelleBindingSource;
+            this.personTabelleBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.personTabelleBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.personTabelleBindingNavigator.Dock = System.Windows.Forms.DockStyle.Right;
+            this.personTabelleBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.personTabelleBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.personTabelleBindingNavigatorSaveItem,
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.printToolStripButton,
+            this.toolStripSeparator,
+            this.cutToolStripButton,
+            this.copyToolStripButton,
+            this.pasteToolStripButton,
+            this.toolStripSeparator1,
+            this.helpToolStripButton});
+            this.personTabelleBindingNavigator.Location = new System.Drawing.Point(797, 0);
+            this.personTabelleBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.personTabelleBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.personTabelleBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.personTabelleBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.personTabelleBindingNavigator.Name = "personTabelleBindingNavigator";
+            this.personTabelleBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.personTabelleBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.personTabelleBindingNavigator.Size = new System.Drawing.Size(53, 500);
+            this.personTabelleBindingNavigator.TabIndex = 3;
+            this.personTabelleBindingNavigator.Text = "bindingNavigator1";
+            this.personTabelleBindingNavigator.RefreshItems += new System.EventHandler(this.personTabelleBindingNavigator_RefreshItems);
+            // 
             // adminSeite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 474);
+            this.ClientSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.personTabelleBindingNavigator);
             this.Controls.Add(this.loginPage);
             this.Controls.Add(this.wilkommenMesssage);
@@ -572,34 +559,10 @@
         private System.Windows.Forms.Button adminUserPanelButton;
         private System.Windows.Forms.Button adminHomeButton;
         private System.Windows.Forms.Button adminExitButton;
-        private System.Windows.Forms.Button adminSystemSettingsButton;
         private Rechtsbuero_DBDataSet rechtsbuero_DBDataSet;
         private System.Windows.Forms.BindingSource personTabelleBindingSource;
         private Rechtsbuero_DBDataSetTableAdapters.PersonTabelleTableAdapter personTabelleTableAdapter;
         private Rechtsbuero_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator personTabelleBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton personTabelleBindingNavigatorSaveItem;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton cutToolStripButton;
-        private System.Windows.Forms.ToolStripButton copyToolStripButton;
-        private System.Windows.Forms.ToolStripButton pasteToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.Panel adminUserPanelSeite;
         private System.Windows.Forms.DataGridView userDataTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzerIDDataGridViewTextBoxColumn;
@@ -614,6 +577,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn geschlechtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teamNummerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton personTabelleBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton newToolStripButton;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton printToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton cutToolStripButton;
+        private System.Windows.Forms.ToolStripButton copyToolStripButton;
+        private System.Windows.Forms.ToolStripButton pasteToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton;
+        private System.Windows.Forms.BindingNavigator personTabelleBindingNavigator;
     }
 }
 

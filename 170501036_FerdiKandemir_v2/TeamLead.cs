@@ -9,11 +9,11 @@ namespace _170501036_FerdiKandemir_v2
 {
     internal class TeamLead : Person
     {
-        public TeamLead(string vorName, string nachName, string tcNummer, string telefonNummer) : base(vorName, nachName, tcNummer, telefonNummer)
+        public TeamLead(string vorName, string nachName, string tcNummer, string telefonNummer, int benutzerID) : base(vorName, nachName, tcNummer, telefonNummer, benutzerID)
         {
 
         }
-        public TeamLead(string vorName, string nachName, string tcNummer, string emailAdresse, string telefonNummer, string geschlecht, string teamNummer, int alter) : base(vorName, nachName, tcNummer, emailAdresse, telefonNummer, geschlecht, teamNummer, alter)
+        public TeamLead(string vorName, string nachName, string tcNummer, string emailAdresse, string telefonNummer, int benutzerID,string geschlecht, string teamNummer, int alter) : base(vorName, nachName, tcNummer, emailAdresse, telefonNummer, benutzerID,geschlecht, teamNummer, alter)
         {
 
         }

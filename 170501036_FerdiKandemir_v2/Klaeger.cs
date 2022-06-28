@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _170501036_FerdiKandemir_v2
+/*namespace _170501036_FerdiKandemir_v2
 {
     internal class Klaeger : Person
     {
@@ -18,3 +18,4 @@ namespace _170501036_FerdiKandemir_v2
         }
     }
 }
+*/

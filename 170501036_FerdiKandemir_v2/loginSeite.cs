@@ -27,7 +27,7 @@ namespace _170501036_FerdiKandemir_v2
 
         private void loginEinloggenButton_Click(object sender, EventArgs e)
         {
-            string BenutzerName = loginBenutzernameInput.Text;
+            string BenutzerName = loginBenutzernameInput.Text;                                                                                                        
             string passwort     = loginPasswortInput.Text;
             if ( BenutzerName == "" && passwort == "")
             {
@@ -53,8 +53,8 @@ namespace _170501036_FerdiKandemir_v2
                 {
                     while(reader.Read())
                     {
-                        nameToControl = reader["BenutzerName"].ToString();
-                        passwordToControl = reader["Passwort"].ToString();
+                        nameToControl       = reader["BenutzerName"].ToString();
+                        passwordToControl   = reader["Passwort"].ToString();
                         typeOfUserToControl = reader["BenutzerTyp"].ToString();
                         
                         if (passwort == passwordToControl)
@@ -66,10 +66,22 @@ namespace _170501036_FerdiKandemir_v2
                             }
                             else if (typeOfUserToControl == "1")
                             {
-                                new rechtsAnwaltSeite().Show();
+                                String benutzID = reader["BenutzerID"].ToString();
+                                String benutzTyp = reader["BenutzerTyp"].ToString();
+                                String teamNr = reader["TeamNummer"].ToString();
+
+                                new rechtsAnwaltSeite(benutzID,benutzTyp,teamNr).Show();
                                 this.Hide();
                             }
-                            
+                            else if (typeOfUserToControl == "2")
+                            {
+                                String benutzID = reader["BenutzerID"].ToString();
+                                String teamNum = reader["TeamNummer"].ToString();
+
+                                new teamLeadSeite(benutzID,teamNum).Show();
+                                this.Hide();
+                            }
+
                         }
                         else
                         {

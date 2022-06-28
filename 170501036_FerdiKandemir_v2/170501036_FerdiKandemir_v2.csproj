@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -50,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Fall.cs" />
+    <Compile Include="teamLeadSeite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teamLeadSeite.Designer.cs">
+      <DependentUpon>teamLeadSeite.cs</DependentUpon>
+    </Compile>
     <Compile Include="rechtsAnwaltSeite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +82,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Rechtsbuero_DBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Rechtsbuero_DBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rechtsbuero_DBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Rechtsbuero_DBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rechtsbuero_DBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Rechtsbuero_DBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rechtsbuero_DBDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TeamLead.cs" />
     <Compile Include="adminSeite.cs">
       <SubType>Form</SubType>
@@ -86,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="adminSeite.resx">
       <DependentUpon>adminSeite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teamLeadSeite.resx">
+      <DependentUpon>teamLeadSeite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rechtsAnwaltSeite.resx">
       <DependentUpon>rechtsAnwaltSeite.cs</DependentUpon>
@@ -132,6 +157,39 @@
     </None>
     <None Include="Rechtsbuero_DBDataSet1.xss">
       <DependentUpon>Rechtsbuero_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet2.xsc">
+      <DependentUpon>Rechtsbuero_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rechtsbuero_DBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet2.xss">
+      <DependentUpon>Rechtsbuero_DBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet3.xsc">
+      <DependentUpon>Rechtsbuero_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rechtsbuero_DBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet3.xss">
+      <DependentUpon>Rechtsbuero_DBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet4.xsc">
+      <DependentUpon>Rechtsbuero_DBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rechtsbuero_DBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rechtsbuero_DBDataSet4.xss">
+      <DependentUpon>Rechtsbuero_DBDataSet4.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
